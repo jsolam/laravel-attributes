@@ -158,7 +158,7 @@ trait Attributable
         static::$entityAttributes = static::$entityAttributes ?? collect();
 
         if (! static::$entityAttributes->has($morphClass) && Schema::hasTable(config('rinvex.attributes.tables.attribute_entity'))) {
-            $locale = app()->getLocale();
+            $locale = app('translator')->getLocale();
 
             /* This is a trial to implement per resource attributes,
                it's working but I don't like current implementation.
